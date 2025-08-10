@@ -1,0 +1,1 @@
+# odoo_staff_equipment_free
