@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_vitouequ_report_equipment_form" model="ir.ui.view">
+        <field name="name">vitouequ.open.report.equipment.form</field>
+        <field name="model">vitouequ.open.report.equipment</field>
+        <field name="arch" type="xml">
+            <form string="Month Attendance Report" duplicate="0">
+                <sheet>
+
+
+                    <group>
+                        <group>
+<!--                            <field name="checkintype"/>-->
+                             <field name="company_id"/>
+                             <field name="department_id"/>
+                             <field name="employee_id"/>
+                             <field name="location_use_id"/>
+
+
+                        </group>
+
+                    </group>
+
+                    <footer style="height:40px;">
+
+                        <button type="object" name="action_close" string="Close" class="btn-primary"/>
+                        <button type="object" name="action_open_report" string="Open Report" class="btn-success" icon="fa-check"/>
+
+
+                    </footer>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_vitouequ_open_report_equipment_view" model="ir.actions.act_window">
+        <field name="name">Open Report Equipment List</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">vitouequ.open.report.equipment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <!--        <field name="context">{'search_default_filter_today':1}</field>-->
+        <field name="view_id" ref="vitou_staff_equipment_free.view_vitouequ_report_equipment_form"/>
+        <!--         <field name="view_ids"-->
+        <!--                       eval="[(5, 0, 0),-->
+        <!--                                  (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_vitouslot_dailypayout_kanban')}),-->
+        <!--                                  (0, 0, {'view_mode': 'list', 'view_id': ref('view_vitouslot_dailypayout_list')}),-->
+        <!--                                  (0, 0, {'view_mode': 'graph', 'view_id': ref('view_vitouslot_metercage_graph')}),-->
+        <!--                                  ]"/>-->
+
+    </record>
+
+
+</odoo>

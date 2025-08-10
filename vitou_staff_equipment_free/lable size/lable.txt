@@ -1,0 +1,11 @@
+
+lable:
+w = 30mm = 113.38 px
+h = 15mm =56.69 px
+
+1mm = 3.7px
+2mm = 7.5px
+3mm = 11.3px
+
+page:
+w = 9.5cm = 95mm = 359px;

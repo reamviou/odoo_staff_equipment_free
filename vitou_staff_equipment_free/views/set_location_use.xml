@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_vitouequ_location_use_list" model="ir.ui.view">
+        <field name="name">vitouequ.location.use.list</field>
+        <field name="model">vitouequ.location.use</field>
+        <field name="arch" type="xml">
+            <list default_order="name asc">
+                 <field name="id" />
+                <field name="name"/>
+                 <field name="state"
+                       widget="label_selection"
+                       options="{'classes': {'posted': 'success','done': 'danger'}}"
+                />
+
+                <field name="description"/>
+                <field name="create_date"/>
+                <field name="create_uid"/>
+                <field name="write_date" optional="show"/>
+                <field name="write_uid" optional="show"/>
+                <field name="done_date" optional="hide"/>
+                <field name="done_uid" optional="hide"/>
+                 <field name="undodone_date" optional="hide"/>
+                <field name="undodone_uid" optional="hide"/>
+            </list>
+
+        </field>
+    </record>
+
+
+    <record id="view_vitouequ_location_use_form" model="ir.ui.view">
+        <field name="name">vitouequ.location.use.form</field>
+        <field name="model">vitouequ.location.use</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <header>
+                      <button name="action_done" type="object" string="Done" invisible="state!='posted'" class="btn-success  ml4"/>
+
+                     <button name="action_undo_done" type="object" string="Undo Done" class="btn-danger  ml4"
+                              confirm="Undo from Done?"/>
+
+                     <field name="state" widget="statusbar" invisible="state!='done'"
+                           statusbar_visible="posted, done"/>
+                </header>
+
+                <sheet>
+                    <group>
+
+
+                        <group>
+
+                            <field name="name"/>
+                             <field name="description"/>
+
+                        </group>
+
+                    </group>
+                </sheet>
+
+                <div class="chatter"/>
+
+
+<!--                <div class="oe_chatter">-->
+<!--                    <field name="message_follower_ids" groups="base.group_user"/>-->
+<!--                    <field name="message_ids"/>-->
+
+<!--                </div>-->
+            </form>
+
+        </field>
+    </record>
+
+
+
+    <record id="action_vitouequ_location_use" model="ir.actions.act_window">
+        <field name="name">Location Use</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">vitouequ.location.use</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+</odoo>

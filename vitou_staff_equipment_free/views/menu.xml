@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Defined all menus here -->
+    <menuitem id="vitouequ_main_menu"
+              name="Staff Equipment"
+              parent="hr.menu_hr_root"
+              sequence="80"/>
+
+
+
+
+
+
+ <menuitem id="vitouequ_equipment_menu"
+              name="Equipment List"
+              action="action_vitouequ_equipment"
+              parent="vitouequ_main_menu"
+               sequence="80"/>
+    <menuitem id="vitouequ_location_use_menu"
+              name="Set Location Use"
+              action="action_vitouequ_location_use"
+              parent="vitouequ_main_menu"
+               sequence="81"/>
+
+
+    <menuitem
+                id="menu_vitousequ_help"
+                name="Help"
+                parent="vitouequ_main_menu"
+                action="vitouequ_action_help"
+                sequence="89"/>
+
+
+
+</odoo>
